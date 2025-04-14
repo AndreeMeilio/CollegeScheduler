@@ -1,0 +1,257 @@
+{
+    "title": "College Scheduler",
+
+    "deleteConfirmationTitle": "Confirmation Deletion!",
+    "deleteDescription": "The deleted data cannot be restored, Are you sure you want to delete it?",
+    "deleteCancelButton": "Cancel",
+    "deleteProceedButton": "Yes, Delete it",
+
+    "quoteAfterLogin": "\"THE BEST TIME TO GROW A TREE IS 20 YEARS AGO, THE SECOND BEST TIME IS NOW\"",
+    "quoteAfterLoginMark" : "~ Chinese Proverb",
+
+    "gettingDataSuccess": "Successfully getting data {feature}",
+    "@gettingDataSuccess":{
+        "description": "Generic description for getting data success",
+        "feature": {
+            "type" : "String",
+            "example": "class"
+        }
+    },
+    "creatingDataSuccess": "Successfully creating data {feature}",
+    "@creatingDataSuccess":{
+        "description": "Generic description for creating data success",
+        "feature": {
+            "type" : "String",
+            "example": "class"
+        }
+    },
+
+    "updatingDataSuccess": "Successfully updating data {feature}",
+    "@updatingDataSuccess":{
+        "description": "Generic description for updating data success",
+        "feature": {
+            "type" : "String",
+            "example": "class"
+        }
+    },
+    "deletingDataSuccess": "Successfully deleting data {feature}",
+    "@deletingDataSuccess":{
+        "description": "Generic description for deleting data success",
+        "feature": {
+            "type" : "String",
+            "example": "class"
+        }
+    },
+    "gettingDataEmpty": "You don't have data on {feature}",
+    "@gettingDataEmpty":{
+        "description": "Generic description for empty getting data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+    "gettingDataProblem": "There's a problem when getting {feature} data",
+    "@gettingDataProblem":{
+        "description": "Generic description for problem getting data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+    "creatingDataProblem": "There's a problem when creating {feature} data",
+    "@creatingDataProblem":{
+        "description": "Generic description for problem creating data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+    "updatingDataProblem": "There's a problem when updating {feature} data",
+    "@updatingDataProblem":{
+        "description": "Generic description for problem updating data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+    "deletingDataProblem": "There's a problem when deleting {feature} data",
+    "@deletingDataProblem":{
+        "description": "Generic description for problem deleting data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+
+    "homeMenuButton" : "Home",
+    "eventsMenuButton": "Events",
+    "settingsMenuButton": "Settings",
+
+    "dataSettingsLabel": "Data",
+    "notificationSettingsLabel": "Notification",
+    "accountSettingsLabel": "Account",
+    "incoming": "Coming Soon",
+
+    "changeFullnameOrUsernameTitle" : "Change Fullname Or Username",
+    "fullnameLabel": "Fullname",
+    "fullnameHint": "Input your Fullname",
+    "fullnameEmpty": "Please input your Fullname",
+    "fullnameNewhint" : "Input your new Fullname",
+    "fullnameNewEmptyError": "Please input your new Fullname",
+    "usernameLabel": "Username",
+    "usernameEmpty": "Please input your account username",
+    "usernameHint": "Input your Username",
+    "usernameNewHint": "Input your new Username",
+    "usernameNewEmptyError" : "Please input your new Username",
+    "passwordLabel" : "Password",
+    "passwordHint": "Input your password",
+    "passwordEmpty": "Please input your account password",
+    "passwordUpTo8": "Password Must Up To 8 Characters",
+    "passwordContainNumber": "Password Must Contain At least One Number",
+    "passwordContainerSymbol": "Password Must Contain Symbol",
+    "confirmationPasswordTitle": "Confirmation Password",
+    "confirmationPasswordHint": "Input Your Confirmation Password",
+    "confirmationPasswordEmpty": "Please input your confirmation password",
+    "passwordAndConfirmationDontMatch": "Your password and confirmation password doesn't match",
+    "registerFailed": "Register Failed",
+    "registerAccount": "Register Account",
+    "registerSuccess": "Register Success",
+    "alreadyHaveAccount" : "Already Have Account? ",
+    "loginHere": "Login Here",
+    "loginFailed": "Login Failed",
+    "loginEmpty": "Please input your credentials",
+    "loginLabel": "Login",
+    "loginSuccess": "Login Success",
+    "loginFailed": "Login Failed",
+    "noAccount": "Don't Have Account? ",
+    "registerHere": "Register Here",
+    "passwordChangeFullnameUsernameHint": "Input your password for validation account",
+    "passwordEmptyError": "Please input your password for security purpose",
+    "changingFullnameUsernamePasswordDisclamer": "For security purpose, please insert your account password, so that we can know this is you who trying to change the username",
+    "changeFullnameUsernameFailedTitle": "Change Fullname or Username failed",
+    "emptyFieldError": "Please fill the required data",
+    "submitChange": "Submit Changes",
+
+    "greetingFriend" : "Welcome Back! \n{user}",
+    "@greetingFriend": {
+        "description": "greeting user",
+        "user": {
+            "type": "String",
+            "example": "My Friend"
+        }
+    },
+
+    "dataStatusTitle": "Data Status",
+    "idleStatus" : "NOT STARTED",
+    "progressStatus" : "PROGESS",
+    "doneStatus" : "DONE",
+
+    "dataPriorityTitle": "Data Priority",
+    "lowPriority" : "LOW",
+    "mediumPriority": "MEDIUM",
+    "highPriority": "HIGH",
+
+    "coreMenuTitle": "Core Menu",
+    "dataClassTitle": "Data Class",
+    "dataEventsTitle": "Data Events",
+    "dataLecturerTitle": "Data Lecturer",
+
+    "recentDataEvents": "Recent Data Events",
+
+    "createDataClass": "Create Data Class",
+
+    "editButton": "Edit",
+    "deleteButton": "Delete",
+
+    "searchItemByTitle": "Search Item By Title",
+    "filterEvents": "Filter Events",
+    "dateOfEventsLabel": "Date Of Event",
+    "dateOfEventsHint": "Please input Date Of Event",
+    "priorityLabel" : "Priority",
+    "prioritySelect" : "Select Priority",
+    "statusLabel": "Status",
+    "statusSelect": "Select Status",
+    "clearButton": "Clear",
+    "submitButton": "Submit",
+    "deadlineLabel": "Deadline",
+    "selectClassLabel": "Select Class",
+
+    "createDataLecturer": "Create Data Lecturer",
+
+    "detailEventTitle": "Detail Event",
+    "startHourLabel": "Start Hour",
+    "endHourLabel": "End Hour",
+    "locationLabel" : "Location",
+    "classNameLabel": "Class Name",
+    "descriptionLabel": "Description",
+    "eventHistory": "Event History",
+
+    "inputDataClassTitle": "Input Data Class",
+    "classNameHint": "Input Class Name",
+    "classNameEmpty": "Please input the name of the class",
+    "lecturerLabel": "Lecturer",
+    "lecturerSelect": "Select Lecturer",
+    "dayLabel": "Day",
+    "daySelect" : "Select Day",
+    "dayMonday": "Monday",
+    "dayTuesday": "Tuesday",
+    "dayWednesday": "Wednesday",
+    "dayThursday": "Thursday",
+    "dayFriday": "Friday",
+    "daySaturday": "Saturday",
+    "daySunday": "Sunday",
+    "startHourEmpty": "Please input starting time of the class",
+    "endHourEmpty": "Please input ending time of the class",
+    "createDataClassFailed": "Create Data Class Failed",
+    "createDataClassSuccess": "Create Data Class Success",
+    "inputDataLecturerTitle": "Input Data Lecturer",
+    "lecturerNameLabel": "Lecturer Name",
+    "lecturerNameHint": "Input Lecturer Name",
+    "lecturerNameEmpty": "Please input the name of lecturer",
+    "lecturerInputFailed": "Create Data Lecturer Failed",
+    
+    "loginHistoryTitle": "Login History",
+    "createEventSchedule": "Create Event Schedule",
+    "titleLabel" : "Title Event",
+    "titleHint": "Input Title Event",
+    "titleEmpty": "Please input the title event",
+    "createEventSuccess": "Successfully Create Event Schedule",
+    "createEventFailed": "Create Event Failed",
+
+    "actionFeatureSuccess": "{action} Success",
+    "@actionFeatureSuccess":{
+        "description": "Action Success Title",
+        "action":{
+            "type": "String",
+            "example": "Login"
+        }
+    },
+    "actionFeatureFailed": "{action} Failed",
+    "@actionFeatureFailed": {
+        "description": "Action Failed Title",
+        "action": {
+            "type": "String",
+            "example": "Login"
+        }
+    },
+    "to": "To",
+
+    "menuSettingsLabel": "{menu, select, menuDataClass{Data Class} menuDataLecturer{Data Lecturer} menuEventHistory{Event History} menuReminderEvent{Reminder Event} menuReminderInput{Reminder Input} menuChangePassword{Change Password} menuChangeFullnameOrUsername{Change Fullname Or Username} menuLoginHistory{Login History} menuExportDatabase{Export Database} menuImportDatabase{Import Database} menuLogout{Logout} other{}}",
+    "@menuSettingsLabel":{
+        "description": "Translate Menu Settings",
+        "placeholders": {
+            "menu":{
+                "type": "String"
+            }
+        }
+    },
+    "quoteDante": "THE PATH TO PARADISE BEGINS IN HELL",
+    "changePasswordTitle": "Change Password",
+    "oldPasswordLabel": "Old Password",
+    "newPaswordLabel": "New Password",
+    "confirmNewPasswordLabel": "Confirm New Password",
+    "oldPasswordHint": "Input your old password",
+    "newPasswordHint": "Input your new password",
+    "confirmNewPasswordHint": "Input confirmation of new password"
+
+}

@@ -1,0 +1,255 @@
+{
+    "title": "College Scheduler",
+
+    "deleteConfirmationTitle": "Konfirmasi Penghapusan!",
+    "deleteDescription": "Data yang terhapus tidak dapat dikembalikan. Apakah Anda yakin ingin menghapusnya?",
+    "deleteCancelButton": "Batal",
+    "deleteProceedButton": "Ya, Hapus",
+
+    "quoteAfterLogin": "\"WAKTU TERBAIK UNTUK MENANAM POHON ADALAH 20 TAHUN YANG LALU, WAKTU TERBAIK KEDUA ADALAH SEKARANG\"",
+    "quoteAfterLoginMark" : "~ Pepatah Cina",
+
+    "gettingDataSuccess": "Berhasil mendapatkan data {feature}",
+    "@gettingDataSuccess":{
+        "description": "Generic description for getting data success",
+        "feature": {
+            "type" : "String",
+            "example": "class"
+        }
+    },
+    "creatingDataSuccess": "Berhasil membuat data {feature}",
+    "@creatingDataSuccess":{
+        "description": "Generic description for creating data success",
+        "feature": {
+            "type" : "String",
+            "example": "class"
+        }
+    },
+
+    "updatingDataSuccess": "Berhasil mengubah data {feature}",
+    "@updatingDataSuccess":{
+        "description": "Generic description for updating data success",
+        "feature": {
+            "type" : "String",
+            "example": "class"
+        }
+    },
+    "deletingDataSuccess": "Berhasil menghapus data {feature}",
+    "@deletingDataSuccess":{
+        "description": "Generic description for deleting data success",
+        "feature": {
+            "type" : "String",
+            "example": "class"
+        }
+    },
+    "gettingDataEmpty": "Anda tidak memiliki data {feature}",
+    "@gettingDataEmpty":{
+        "description": "Generic description for empty getting data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+    "gettingDataProblem": "Ada masalah saat mendapatkan data {feature}",
+    "@gettingDataProblem":{
+        "description": "Generic description for problem getting data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+    "creatingDataProblem": "Ada masalah saat membuat data {feature}",
+    "@creatingDataProblem":{
+        "description": "Generic description for problem creating data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+    "updatingDataProblem": "Ada masalah saat mengubah data {feature}",
+    "@updatingDataProblem":{
+        "description": "Generic description for problem updating data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+    "deletingDataProblem": "Ada masalah saat menghapus data {feature}",
+    "@deletingDataProblem":{
+        "description": "Generic description for problem deleting data",
+        "feature": {
+            "type": "String",
+            "example": "class"
+        }
+    },
+
+    "homeMenuButton" : "Beranda",
+    "eventsMenuButton": "Acara",
+    "settingsMenuButton": "Pengaturan",
+
+    "dataSettingsLabel": "Data",
+    "notificationSettingsLabel": "Pemberitahuan",
+    "accountSettingsLabel": "Akun",
+    "incoming": "Segera Hadir",
+
+    "changeFullnameOrUsernameTitle" : "Ubah Nama Lengkap Atau Nama Pengguna",
+    "fullnameLabel": "Nama Lengkap",
+    "fullnameHint": "Masukkan Nama Lengkap Anda",
+    "fullnameEmpty": "Silakan masukkan Nama Lengkap Anda",
+    "fullnameNewhint" : "Masukkan Nama Lengkap baru Anda",
+    "fullnameNewEmptyError": "Silakan masukkan Nama Lengkap baru Anda",
+    "usernameLabel": "Nama Pengguna",
+    "usernameEmpty": "Silakan masukkan nama pengguna akun Anda",
+    "usernameHint": "Masukkan Nama Pengguna Anda",
+    "usernameNewHint": "Masukan nama pengguna baru",
+    "usernameNewEmptyError" : "Silakan masukkan Nama Pengguna baru Anda",
+    "passwordLabel" : "Kata Sandi",
+    "passwordHint": "Masukkan kata sandi Anda",
+    "passwordEmpty": "Silakan masukkan kata sandi akun Anda",
+    "passwordUpTo8": "Kata Sandi Harus Hingga 8 Karakter",
+    "passwordContainNumber": "Kata Sandi Harus Mengandung Setidaknya Satu Angka",
+    "passwordContainerSymbol": "Kata Sandi Harus Mengandung Simbol",
+    "confirmationPasswordTitle": "Konfirmasi Kata Sandi",
+    "confirmationPasswordHint": "Masukkan Kata Sandi Konfirmasi Anda",
+    "confirmationPasswordEmpty": "Harap masukkan konfirmasi kata sandi",
+    "passwordAndConfirmationDontMatch": "Kata sandi dan kata sandi konfirmasi Anda tidak cocok",
+    "registerFailed": "Daftar Gagal",
+    "registerAccount": "Daftar Akun",
+    "registerSuccess": "Daftar Berhasil",
+    "registerLabel": "Daftar",
+    "selectClassLabel": "Daftar Kelas",
+    "alreadyHaveAccount" : "Sudah Punya Akun? ",
+    "loginHere": "Masuk di sini",
+    "loginEmpty": "Silakan masukkan kredensial Anda",
+    "loginLabel": "Masuk",
+    "loginSuccess": "Masuk Berhasil",
+    "loginFailed": "Masuk Gagal",
+    "noAccount": "Belum Punya Akun? ",
+    "registerHere": "Daftar Di sini",
+    "passwordChangeFullnameUsernameHint": "Masukkan kata sandi Anda untuk validasi akun",
+    "passwordEmptyError": "Harap masukkan kata sandi Anda untuk tujuan keamanan",
+    "changingFullnameUsernamePasswordDisclamer": "Demi keamanan, mohon masukkan password akun Anda, sehingga kami dapat mengetahui bahwa Andalah yang mencoba mengubah nama pengguna.",
+    "changeFullnameUsernameFailedTitle": "Gagal mengubah Nama Lengkap atau Nama Pengguna",
+    "emptyFieldError": "Silakan isi data yang dibutuhkan",
+    "submitChange": "Kirim Perubahan",
+
+    "greetingFriend" : "Selamat Datang Kembali! \n{user}",
+    "@greetingFriend": {
+        "description": "greeting user",
+        "user": {
+            "type": "String",
+            "example": "Teman ku"
+        }
+    },
+
+    "dataStatusTitle": "Data Status",
+    "idleStatus" : "BELUM DIMULAI",
+    "progressStatus" : "PROGRESS",
+    "doneStatus" : "SELESAI",
+
+    "dataPriorityTitle": "Data Prioritas",
+    "lowPriority" : "RENDAH",
+    "mediumPriority": "SEDANG",
+    "highPriority": "TINGGI",
+
+    "coreMenuTitle": "Menu Utama",
+    "dataClassTitle": "Data Kelas",
+    "dataEventsTitle": "Data Acara",
+    "dataLecturerTitle": "Data Dosen",
+
+    "recentDataEvents": "Data Acara Terbaru",
+
+    "createDataClass": "Buat Data Kelas",
+
+    "editButton": "Ubah",
+    "deleteButton": "Hapus",
+
+    "searchItemByTitle": "Cari Data Berdasarkan Nama",
+    "filterEvents": "Filter Acara",
+    "dateOfEventsLabel": "Tanggal Acara",
+    "dateOfEventsHint": "Silakan masukkan tanggal acara",
+    "priorityLabel" : "Prioritas",
+    "prioritySelect" : "Pilih Prioritas",
+    "statusLabel": "Status",
+    "statusSelect": "Pilih Status",
+    "clearButton": "Bersihkan",
+    "submitButton": "Kirim",
+    "deadlineLabel": "Tenggat Waktu",
+
+    "createDataLecturer": "Buat Data Dosen",
+
+    "detailEventTitle": "Rincian Acara",
+    "startHourLabel": "Waktu Dimulainya",
+    "endHourLabel": "Waktu Berakhirnya",
+    "locationLabel" : "Lokasi",
+    "classNameLabel": "Nama Kelas",
+    "descriptionLabel": "Deskripsi",
+    "eventHistory": "Riwayat Acara",
+
+    "inputDataClassTitle": "Data Input Kelas",
+    "classNameHint": "Masukkan Nama Kelas",
+    "classNameEmpty": "Silakan masukkan nama kelas",
+    "lecturerLabel": "Dosen",
+    "lecturerSelect": "Pilih Dosen",
+    "dayLabel": "Hari",
+    "daySelect" : "Pilih Hari",
+    "dayMonday": "Senin",
+    "dayTuesday": "Selasa",
+    "dayWednesday": "Rabu",
+    "dayThursday": "Kamis",
+    "dayFriday": "Jumat",
+    "daySaturday": "Sabtu",
+    "daySunday": "Minggu",
+    "startHourEmpty": "Silakan masukkan waktu dimulainya kelas",
+    "endHourEmpty": "Silakan masukkan waktu berakhirnya kelas",
+    "createDataClassFailed": "Buat Data Kelas Gagal",
+    "createDataClassSuccess": "Buat Data Kelas Berhasil",
+    "inputDataLecturerTitle": "Data Input Dosen",
+    "lecturerNameLabel": "Nama Dosen",
+    "lecturerNameHint": "Masukkan Nama Dosen",
+    "lecturerNameEmpty": "Silakan masukkan nama dosen",
+    "lecturerInputFailed": "Buat Data Dosen Gagal",
+    
+    "loginHistoryTitle": "Riwayat Masuk",
+    "createEventSchedule": "Buat Jadwal Acara",
+    "titleLabel" : "Judul Acara",
+    "titleHint": "Masukkan Judul Acara",
+    "titleEmpty": "Silakan masukkan Judul Acara",
+    "createEventSuccess": "Berhasil Membuat Jadwal Acara",
+    "createEventFailed": "Pembuatan Acara Gagal",
+    "actionFeatureSuccess": "{action} Berhasil",
+    "@actionFeatureSuccess":{
+        "description": "Action Success Title",
+        "action":{
+            "type": "String",
+            "example": "Login"
+        }
+    },
+    "actionFeatureFailed": "{action} Gagal",
+    "@actionFeatureFailed": {
+        "description": "Action Failed Title",
+        "action": {
+            "type": "String",
+            "example": "Login"
+        }
+    },
+    "to": "Sampai",
+    
+    "menuSettingsLabel": "{menu, select, menuDataClass{Data Kelas} menuDataLecturer{Data Dosen} menuEventHistory{Riwayat Acara} menuReminderEvent{Pengingat Acara} menuReminderInput{Pengingat Masukkan Data} menuChangePassword{Ganti Kata Sandi} menuChangeFullnameOrUsername{Ganti Nama Lengkap Atau Nama Pengguna} menuLoginHistory{Riwayat Masuk} menuExportDatabase{Ekspor Database} menuImportDatabase{Impor Database} menuLogout{Keluar} other{}}",
+    "@menuSettingsLabel":{
+        "description": "Translate Menu Settings",
+        "placeholders": {
+            "menu":{
+                "type": "String"
+            }
+        }
+    },
+    "quoteDante": "\"JALAN MENUJU SURGA DIMULAI DI NERAKA\"",
+    "changePasswordTitle": "Ganti Kata Sandi",
+    "oldPasswordLabel": "Kata Sandi Lama",
+    "newPaswordLabel": "Kata Sandi Baru",
+    "confirmNewPasswordLabel": "Konfirmasi Kata Sandi Baru",
+    "oldPasswordHint": "Masukan kata sandi lama",
+    "newPasswordHint": "Masukan kata sandi baru",
+    "confirmNewPasswordHint": "Masukkan konfirmasi kata sandi baru"
+}
