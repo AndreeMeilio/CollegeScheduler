@@ -4,6 +4,9 @@ import 'package:college_scheduler/cubit/event/priority_events_cubit.dart';
 import 'package:college_scheduler/cubit/event/status_events_cubit.dart';
 import 'package:college_scheduler/cubit/language_locale_cubit.dart';
 import 'package:college_scheduler/cubit/menu/settings_menu_cubit.dart';
+import 'package:college_scheduler/cubit/notification/create_reminder_setting_cubit.dart';
+import 'package:college_scheduler/cubit/notification/get_reminder_setting_cubit.dart';
+import 'package:college_scheduler/cubit/notification/list_reminder_pending_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:college_scheduler/cubit/menu/base_menu_cubit.dart';
 import 'package:college_scheduler/cubit/class/create_and_update_data_class_cubit.dart';
@@ -29,7 +32,7 @@ class CubitConfig {
         create: (context) => RegisterCubit(usersLocalData: sl()),
       ),
       BlocProvider<CreateAndUpdateEventCubit>(
-        create: (context) => CreateAndUpdateEventCubit(eventLocalData: sl()),
+        create: (context) => CreateAndUpdateEventCubit(eventLocalData: sl(), reminderLocalData: sl()),
       ),
       BlocProvider<ListEventCubit>(
         create: (context) => ListEventCubit(eventLocalData: sl()),
@@ -72,6 +75,13 @@ class CubitConfig {
       ),
       BlocProvider<LanguageLocaleCubit>(
         create: (context) => LanguageLocaleCubit(),
+      ),
+      BlocProvider<CreateReminderSettingCubit>(
+        create: (context) => CreateReminderSettingCubit(reminderLocalData: sl()),
+      ),
+      BlocProvider(create: (context) => GetReminderSettigCubit(reminderLocalData: sl())),
+      BlocProvider(
+        create: (context) => ListReminderPendingCubit(),
       )
     ];
   }

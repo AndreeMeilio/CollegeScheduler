@@ -15,7 +15,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get deleteConfirmationTitle => 'Konfirmasi Penghapusan!';
 
   @override
-  String get deleteDescription => 'Data yang terhapus tidak dapat dikembalikan. Apakah Anda yakin ingin menghapusnya?';
+  String get deleteDescription =>
+      'Data yang terhapus tidak dapat dikembalikan. Apakah Anda yakin ingin menghapusnya?';
 
   @override
   String get deleteCancelButton => 'Batal';
@@ -24,7 +25,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get deleteProceedButton => 'Ya, Hapus';
 
   @override
-  String get quoteAfterLogin => '\"WAKTU TERBAIK UNTUK MENANAM POHON ADALAH 20 TAHUN YANG LALU, WAKTU TERBAIK KEDUA ADALAH SEKARANG\"';
+  String get quoteAfterLogin =>
+      '\"WAKTU TERBAIK UNTUK MENANAM POHON ADALAH 20 TAHUN YANG LALU, WAKTU TERBAIK KEDUA ADALAH SEKARANG\"';
 
   @override
   String get quoteAfterLoginMark => '~ Pepatah Cina';
@@ -96,7 +98,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get incoming => 'Segera Hadir';
 
   @override
-  String get changeFullnameOrUsernameTitle => 'Ubah Nama Lengkap Atau Nama Pengguna';
+  String get changeFullnameOrUsernameTitle =>
+      'Ubah Nama Lengkap Atau Nama Pengguna';
 
   @override
   String get fullnameLabel => 'Nama Lengkap';
@@ -126,7 +129,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get usernameNewHint => 'Masukan nama pengguna baru';
 
   @override
-  String get usernameNewEmptyError => 'Silakan masukkan Nama Pengguna baru Anda';
+  String get usernameNewEmptyError =>
+      'Silakan masukkan Nama Pengguna baru Anda';
 
   @override
   String get passwordLabel => 'Kata Sandi';
@@ -141,7 +145,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get passwordUpTo8 => 'Kata Sandi Harus Hingga 8 Karakter';
 
   @override
-  String get passwordContainNumber => 'Kata Sandi Harus Mengandung Setidaknya Satu Angka';
+  String get passwordContainNumber =>
+      'Kata Sandi Harus Mengandung Setidaknya Satu Angka';
 
   @override
   String get passwordContainerSymbol => 'Kata Sandi Harus Mengandung Simbol';
@@ -153,10 +158,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get confirmationPasswordHint => 'Masukkan Kata Sandi Konfirmasi Anda';
 
   @override
-  String get confirmationPasswordEmpty => 'Harap masukkan konfirmasi kata sandi';
+  String get confirmationPasswordEmpty =>
+      'Harap masukkan konfirmasi kata sandi';
 
   @override
-  String get passwordAndConfirmationDontMatch => 'Kata sandi dan kata sandi konfirmasi Anda tidak cocok';
+  String get passwordAndConfirmationDontMatch =>
+      'Kata sandi dan kata sandi konfirmasi Anda tidak cocok';
 
   @override
   String get registerFailed => 'Daftar Gagal';
@@ -192,16 +199,20 @@ class AppLocalizationsId extends AppLocalizations {
   String get registerHere => 'Daftar Di sini';
 
   @override
-  String get passwordChangeFullnameUsernameHint => 'Masukkan kata sandi Anda untuk validasi akun';
+  String get passwordChangeFullnameUsernameHint =>
+      'Masukkan kata sandi Anda untuk validasi akun';
 
   @override
-  String get passwordEmptyError => 'Harap masukkan kata sandi Anda untuk tujuan keamanan';
+  String get passwordEmptyError =>
+      'Harap masukkan kata sandi Anda untuk tujuan keamanan';
 
   @override
-  String get changingFullnameUsernamePasswordDisclamer => 'Demi keamanan, mohon masukkan password akun Anda, sehingga kami dapat mengetahui bahwa Andalah yang mencoba mengubah nama pengguna.';
+  String get changingFullnameUsernamePasswordDisclamer =>
+      'Demi keamanan, mohon masukkan password akun Anda, sehingga kami dapat mengetahui bahwa Andalah yang mencoba mengubah nama pengguna.';
 
   @override
-  String get changeFullnameUsernameFailedTitle => 'Gagal mengubah Nama Lengkap atau Nama Pengguna';
+  String get changeFullnameUsernameFailedTitle =>
+      'Gagal mengubah Nama Lengkap atau Nama Pengguna';
 
   @override
   String get emptyFieldError => 'Silakan isi data yang dibutuhkan';
@@ -218,7 +229,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get dataStatusTitle => 'Data Status';
 
   @override
-  String get idleStatus => 'BELUM DIMULAI';
+  String get idleStatus => 'MENGANGGUR';
 
   @override
   String get progressStatus => 'PROGRESS';
@@ -427,23 +438,20 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String menuSettingsLabel(String menu) {
-    String _temp0 = intl.Intl.selectLogic(
-      menu,
-      {
-        'menuDataClass': 'Data Kelas',
-        'menuDataLecturer': 'Data Dosen',
-        'menuEventHistory': 'Riwayat Acara',
-        'menuReminderEvent': 'Pengingat Acara',
-        'menuReminderInput': 'Pengingat Masukkan Data',
-        'menuChangePassword': 'Ganti Kata Sandi',
-        'menuChangeFullnameOrUsername': 'Ganti Nama Lengkap Atau Nama Pengguna',
-        'menuLoginHistory': 'Riwayat Masuk',
-        'menuExportDatabase': 'Ekspor Database',
-        'menuImportDatabase': 'Impor Database',
-        'menuLogout': 'Keluar',
-        'other': '',
-      },
-    );
+    String _temp0 = intl.Intl.selectLogic(menu, {
+      'menuDataClass': 'Data Kelas',
+      'menuDataLecturer': 'Data Dosen',
+      'menuEventHistory': 'Riwayat Acara',
+      'menuReminderEvent': 'Pengingat Acara',
+      'menuPendingNotification': 'Notifikasi Ditunda',
+      'menuChangePassword': 'Ganti Kata Sandi',
+      'menuChangeFullnameOrUsername': 'Ganti Nama Lengkap Atau Nama Pengguna',
+      'menuLoginHistory': 'Riwayat Masuk',
+      'menuExportDatabase': 'Ekspor Database',
+      'menuImportDatabase': 'Impor Database',
+      'menuLogout': 'Keluar',
+      'other': '',
+    });
     return '$_temp0';
   }
 
@@ -470,4 +478,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get confirmNewPasswordHint => 'Masukkan konfirmasi kata sandi baru';
+
+  @override
+  String get menuPendingNotification => 'Notifikasi Ditunda';
 }

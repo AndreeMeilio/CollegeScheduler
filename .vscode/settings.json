@@ -1,3 +1,4 @@
 {
-    "dart.flutterSdkPath": "~/SDK/flutter_v2.29/flutter"
+    "dart.flutterSdkPath": "~/SDK/flutter_v2.29/flutter",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

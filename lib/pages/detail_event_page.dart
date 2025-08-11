@@ -188,11 +188,14 @@ class DetailEventPage extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+                margin: const EdgeInsets.symmetric(vertical: 16.0),
                 padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
                 decoration: BoxDecoration(
-                  border: Border.all(color: ColorConfig.mainColor, width: 1.5),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0))
+                  border: Border.symmetric(
+                    horizontal: BorderSide(
+                      color: ColorConfig.mainColor, width: 1.5
+                    )
+                  ),
                 ),
                 child: SingleChildScrollView(
                   child: Column(

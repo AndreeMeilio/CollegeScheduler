@@ -4,6 +4,7 @@ import 'package:college_scheduler/components/quote_widget.dart';
 import 'package:college_scheduler/components/text_form_field.dart';
 import 'package:college_scheduler/config/color_config.dart';
 import 'package:college_scheduler/config/generated/app_localizations.dart';
+import 'package:college_scheduler/config/notification_config.dart';
 import 'package:college_scheduler/config/state_general.dart';
 import 'package:college_scheduler/config/text_style_config.dart';
 import 'package:college_scheduler/cubit/class/list_data_class_cubit.dart';
@@ -72,6 +73,8 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
   late TextEditingController _locationController;
   late TextEditingController _classController;
 
+  late bool _inputWithoutClass;
+
   late PRIORITY _priority;
   late STATUS _status;
 
@@ -100,6 +103,8 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
     _statusController = TextEditingController();
     _locationController = TextEditingController();
     _classController = TextEditingController();
+
+    _inputWithoutClass = false;
 
     _priority = PRIORITY.low;
     _status = STATUS.idle;
@@ -152,7 +157,7 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
     return Form(
       key: _formKey,
       child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 16.0,
         children: [
           CustomTextFormField(
@@ -166,13 +171,13 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
                 context: context, 
                 firstDate: DateTime(DateTime.now().year - 1),
                 lastDate: DateTime(DateTime.now().year + 1),
-                selectableDayPredicate: (DateTime day){
-                  if (day.isAfter(DateTime.now().subtract(const Duration(days: 1)))){
-                    return true;
-                  }
+                // selectableDayPredicate: (DateTime day){
+                //   if (day.isAfter(DateTime.now().subtract(const Duration(days: 1)))){
+                //     return true;
+                //   }
 
-                  return false;
-                },
+                //   return false;
+                // },
                 initialDate: _dateEvent
               );
 
@@ -212,7 +217,13 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
                     final startHourByUsers = await showTimePicker(
                       context: context,
                       initialTime: TimeOfDay.now(),
-                      initialEntryMode: TimePickerEntryMode.input
+                      initialEntryMode: TimePickerEntryMode.input,
+                      builder: (context, child) {
+                        return MediaQuery(
+                          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true),
+                          child: child!,
+                        );
+                      },
                     );
 
                     _startHourController.text = startHourByUsers != null ? "${startHourByUsers.hour}:${startHourByUsers.minute}:00" : "";
@@ -230,7 +241,13 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
                     final endHourByUsers = await showTimePicker(
                       context: context,
                       initialTime: TimeOfDay.now(),
-                      initialEntryMode: TimePickerEntryMode.input
+                      initialEntryMode: TimePickerEntryMode.input,
+                      builder: (context, child) {
+                        return MediaQuery(
+                          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true),
+                          child: child!,
+                        );
+                      },
                     );
 
                     _endHourController.text = endHourByUsers != null ? "${endHourByUsers.hour}:${endHourByUsers.minute}:00" : "";
@@ -259,6 +276,7 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
                   label: AppLocalizations.of(context)?.dataClassTitle ?? "Data Class",
                   controller: _classController,
                   value: _selectedClass,
+                  enabled: !_inputWithoutClass,
                   menu: _itemLecturer.map((data){
                     return DropdownMenuEntry(
                       label: data?.name ?? "",
@@ -295,6 +313,26 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
                 );
               } 
             },
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Row(
+              children: [
+                Checkbox(
+                  value: _inputWithoutClass,
+                  onChanged: (value) {
+                    setState(() {
+                      _inputWithoutClass = value ?? false;
+                    });
+                  },
+                ),
+                const SizedBox(width: 8.0,),
+                Text(
+                  "Save event without class",
+                  style: TextStyleConfig.body1,
+                )
+              ],
+            ),
           ),
           CustomTextFormField(
             controller: _locationController,
@@ -360,7 +398,7 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
                   label: AppLocalizations.of(context)?.clearButton ?? "Clear",
                   width: MediaQuery.sizeOf(context).width * 0.25,
                   color: ColorConfig.greyColor,
-                  onTap: (){
+                  onTap: () async{
                     _priority = PRIORITY.low;
                     _status = STATUS.idle;
                     _dateEvent = DateTime.now();
@@ -379,8 +417,12 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
                     _selectedClass = ClassModel(
                       name: AppLocalizations.of(context)?.selectClassLabel ?? "Select Class"
                     );
-                
+                    
                     _cubit.clearTempDataEvent();
+
+                    setState(() {
+                      _inputWithoutClass = false;
+                    });
                   },
                 ),
               ),
@@ -442,6 +484,10 @@ class _FormInputDataWidgetState extends State<FormInputDataWidget> {
                       _selectedClass = ClassModel(
                         name: (AppLocalizations.of(context)?.selectClassLabel ?? "Select Class")
                       );
+
+                      setState(() {
+                        _inputWithoutClass = false;
+                      });
                       
                     } else if (state.state is CreateAndUpdateEventFailedState){
                       ToastNotifUtils.showError(

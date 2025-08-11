@@ -1,9 +1,12 @@
+import 'dart:math';
+
 import 'package:college_scheduler/components/primary_button.dart';
 import 'package:college_scheduler/components/text_button_component.dart';
 import 'package:college_scheduler/components/text_form_field.dart';
 import 'package:college_scheduler/config/color_config.dart';
 import 'package:college_scheduler/config/constants_route_value.dart';
 import 'package:college_scheduler/config/generated/app_localizations.dart';
+import 'package:college_scheduler/config/notification_config.dart';
 import 'package:college_scheduler/config/state_general.dart';
 import 'package:college_scheduler/config/text_style_config.dart';
 import 'package:college_scheduler/cubit/users/login_cubit.dart';
@@ -12,9 +15,12 @@ import 'package:college_scheduler/pages/register_page.dart';
 import 'package:college_scheduler/utils/toast_notif_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:toastification/toastification.dart';
+import 'package:timezone/data/latest_all.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -80,39 +86,14 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       spacing: 24.0,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(24.0),
-                          height: MediaQuery.sizeOf(context).height * 0.25,
-                          decoration: BoxDecoration(
-                            color: ColorConfig.mainColor,
-                            border: Border.all(color: ColorConfig.whiteColor, width: 1.5),
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(24.0),
-                              bottomRight: Radius.circular(24.0)
-                            )
+                        SizedBox(
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          child: Image.asset(
+                            "assets/bannerlogin.jpg",
+                            fit: BoxFit.cover,
                           ),
-                          child: Column(
-                            spacing: 16.0,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                AppLocalizations.of(context)?.quoteDante ?? "\"THE PATH TO PARADISE BEGINS IN HELL\"",
-                                style: TextStyle(
-                                  fontSize: 24.0,
-                                  fontWeight: FontWeight.w700,
-                                  fontStyle: FontStyle.italic
-                                ),
-                              ),
-                              Text(
-                                "~ Dante Alighieri",
-                                style: TextStyleConfig.heading1.copyWith(
-                                  fontStyle: FontStyle.italic
-                                ),
-                              ),
-                            ],
-                          )
                         ),
+                        const SizedBox(),
                         Container(
                           margin: const EdgeInsets.symmetric(horizontal: 24.0),
                           child: Text(

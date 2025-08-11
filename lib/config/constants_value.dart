@@ -7,4 +7,7 @@ class ConstansValue {
   static const String user_id = 'USER_ID';
   static const String fingerprint_id = "FINGERPRINT";
   static const String username = "USERNAME";
+
+  static const String channelEventNotif = "EventNotif";
+  static const String channelInputNotif = "InputNotif";
 }

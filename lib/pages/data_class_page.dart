@@ -158,7 +158,11 @@ class DataClassItemWidget extends StatelessWidget {
               showModalBottomSheet(
                 context: context,
                 builder: (context){
-                  return DeleteConfirmationComponent(
+                  return BottomSheetConfirmationWidget(
+                    title: "Delete Confirmation!",
+                    description: "The deleted data cannot be restored, Are you sure you want to delete it?",
+                    leftButtonLabel: "Cancel",
+                    rightButtonLabel: "Yes, Delete It",
                     onCancel: (){
                       context.pop();
                     }, 

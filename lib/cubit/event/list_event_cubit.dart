@@ -1,3 +1,4 @@
+import 'package:college_scheduler/config/notification_config.dart';
 import 'package:college_scheduler/config/state_general.dart';
 import 'package:college_scheduler/data/local_data/event_local_data.dart';
 import 'package:college_scheduler/data/models/event_model.dart';
@@ -81,6 +82,9 @@ class ListEventCubit extends Cubit<ListEventStateType>{
 
       if (result.code == "00"){
         getAllEvent();
+
+        // DELETE NOTIFICATION
+        NotificationConfig.cancelEventNotification(id: data.id ?? 0);
       } else {
         listState = ListEventStateType(
           state: ListEventFailedState(),

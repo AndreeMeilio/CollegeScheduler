@@ -28,4 +28,8 @@ class ConstantsRouteValue {
   //Lecturer
   static final String lecturer = "/lecturer";
   static final String actionLecturer = "action";
+
+  //Reminder
+  static final String reminderEvent = "/reminder-event";
+  static final String pendingNotification = "/pending-notification";
 }

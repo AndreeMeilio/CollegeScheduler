@@ -21,7 +21,7 @@ class EventLocalData {
   }) : _database = database,
        _logsLocalData = logsLocalData;
 
-  Future<ResponseGeneral<int>> insertAndUpdate({
+  Future<ResponseGeneral<EventModel>> insertAndUpdate({
     required EventModel data
   }) async {
     try {
@@ -87,6 +87,12 @@ class EventLocalData {
           if (resultInsert >= 1){
             actionName = "create";
             description = "$userName create new data events with title ${data.title} at ${DateTime.now().toString()}";
+
+            // Getting new id data
+            final newDataCreatedQuery = await trx.query("events", orderBy: "created_at desc", limit: 1);
+            final newDataCreated = newDataCreatedQuery.first;
+
+            data.id = int.parse(newDataCreated["id"].toString());
           }
         }
 
@@ -105,20 +111,20 @@ class EventLocalData {
         return ResponseGeneral(
           code: "00",
           message: "Creating new data event schedule successfully",
-          data: result
+          data: data
         );
       } else {
         return ResponseGeneral(
           code: "01",
           message: "Something's wrong when trying to add new data",
-          data: -1
+          data: data
         );
       }
     } catch (e){
       return ResponseGeneral(
         code: "01",
         message: "Something's wrong when trying to add new data",
-        data: -1
+        data: data
       );
     }
   }

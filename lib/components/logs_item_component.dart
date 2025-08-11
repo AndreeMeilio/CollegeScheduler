@@ -41,7 +41,7 @@ class LogsItemComponent extends StatelessWidget {
               ),
               Expanded(
                 child: Text(
-                  DateFormatUtils.dateFormatddMMMMyhhiiss(date: createdAt),
+                  DateFormatUtils.dateFormatddMMMMykkiiss(date: createdAt),
                   style: TextStyleConfig.body1,
                 ),
               )

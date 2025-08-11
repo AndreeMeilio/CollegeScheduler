@@ -142,7 +142,7 @@
     },
 
     "dataStatusTitle": "Data Status",
-    "idleStatus" : "NOT STARTED",
+    "idleStatus" : "IDLE",
     "progressStatus" : "PROGESS",
     "doneStatus" : "DONE",
 
@@ -236,7 +236,7 @@
     },
     "to": "To",
 
-    "menuSettingsLabel": "{menu, select, menuDataClass{Data Class} menuDataLecturer{Data Lecturer} menuEventHistory{Event History} menuReminderEvent{Reminder Event} menuReminderInput{Reminder Input} menuChangePassword{Change Password} menuChangeFullnameOrUsername{Change Fullname Or Username} menuLoginHistory{Login History} menuExportDatabase{Export Database} menuImportDatabase{Import Database} menuLogout{Logout} other{}}",
+    "menuSettingsLabel": "{menu, select, menuDataClass{Data Class} menuDataLecturer{Data Lecturer} menuEventHistory{Event History} menuReminderEvent{Reminder Event} menuPendingNotification{Pending Notification} menuChangePassword{Change Password} menuChangeFullnameOrUsername{Change Fullname Or Username} menuLoginHistory{Login History} menuExportDatabase{Export Database} menuImportDatabase{Import Database} menuLogout{Logout} other{}}",
     "@menuSettingsLabel":{
         "description": "Translate Menu Settings",
         "placeholders": {
@@ -252,6 +252,7 @@
     "confirmNewPasswordLabel": "Confirm New Password",
     "oldPasswordHint": "Input your old password",
     "newPasswordHint": "Input your new password",
-    "confirmNewPasswordHint": "Input confirmation of new password"
+    "confirmNewPasswordHint": "Input confirmation of new password",
+    "menuPendingNotification" : "Pending Notification"
 
 }

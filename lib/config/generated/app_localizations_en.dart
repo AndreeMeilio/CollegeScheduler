@@ -15,7 +15,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteConfirmationTitle => 'Confirmation Deletion!';
 
   @override
-  String get deleteDescription => 'The deleted data cannot be restored, Are you sure you want to delete it?';
+  String get deleteDescription =>
+      'The deleted data cannot be restored, Are you sure you want to delete it?';
 
   @override
   String get deleteCancelButton => 'Cancel';
@@ -24,7 +25,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteProceedButton => 'Yes, Delete it';
 
   @override
-  String get quoteAfterLogin => '\"THE BEST TIME TO GROW A TREE IS 20 YEARS AGO, THE SECOND BEST TIME IS NOW\"';
+  String get quoteAfterLogin =>
+      '\"THE BEST TIME TO GROW A TREE IS 20 YEARS AGO, THE SECOND BEST TIME IS NOW\"';
 
   @override
   String get quoteAfterLoginMark => '~ Chinese Proverb';
@@ -141,7 +143,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get passwordUpTo8 => 'Password Must Up To 8 Characters';
 
   @override
-  String get passwordContainNumber => 'Password Must Contain At least One Number';
+  String get passwordContainNumber =>
+      'Password Must Contain At least One Number';
 
   @override
   String get passwordContainerSymbol => 'Password Must Contain Symbol';
@@ -153,10 +156,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get confirmationPasswordHint => 'Input Your Confirmation Password';
 
   @override
-  String get confirmationPasswordEmpty => 'Please input your confirmation password';
+  String get confirmationPasswordEmpty =>
+      'Please input your confirmation password';
 
   @override
-  String get passwordAndConfirmationDontMatch => 'Your password and confirmation password doesn\'t match';
+  String get passwordAndConfirmationDontMatch =>
+      'Your password and confirmation password doesn\'t match';
 
   @override
   String get registerFailed => 'Register Failed';
@@ -192,16 +197,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registerHere => 'Register Here';
 
   @override
-  String get passwordChangeFullnameUsernameHint => 'Input your password for validation account';
+  String get passwordChangeFullnameUsernameHint =>
+      'Input your password for validation account';
 
   @override
-  String get passwordEmptyError => 'Please input your password for security purpose';
+  String get passwordEmptyError =>
+      'Please input your password for security purpose';
 
   @override
-  String get changingFullnameUsernamePasswordDisclamer => 'For security purpose, please insert your account password, so that we can know this is you who trying to change the username';
+  String get changingFullnameUsernamePasswordDisclamer =>
+      'For security purpose, please insert your account password, so that we can know this is you who trying to change the username';
 
   @override
-  String get changeFullnameUsernameFailedTitle => 'Change Fullname or Username failed';
+  String get changeFullnameUsernameFailedTitle =>
+      'Change Fullname or Username failed';
 
   @override
   String get emptyFieldError => 'Please fill the required data';
@@ -218,7 +227,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dataStatusTitle => 'Data Status';
 
   @override
-  String get idleStatus => 'NOT STARTED';
+  String get idleStatus => 'IDLE';
 
   @override
   String get progressStatus => 'PROGESS';
@@ -427,23 +436,20 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String menuSettingsLabel(String menu) {
-    String _temp0 = intl.Intl.selectLogic(
-      menu,
-      {
-        'menuDataClass': 'Data Class',
-        'menuDataLecturer': 'Data Lecturer',
-        'menuEventHistory': 'Event History',
-        'menuReminderEvent': 'Reminder Event',
-        'menuReminderInput': 'Reminder Input',
-        'menuChangePassword': 'Change Password',
-        'menuChangeFullnameOrUsername': 'Change Fullname Or Username',
-        'menuLoginHistory': 'Login History',
-        'menuExportDatabase': 'Export Database',
-        'menuImportDatabase': 'Import Database',
-        'menuLogout': 'Logout',
-        'other': '',
-      },
-    );
+    String _temp0 = intl.Intl.selectLogic(menu, {
+      'menuDataClass': 'Data Class',
+      'menuDataLecturer': 'Data Lecturer',
+      'menuEventHistory': 'Event History',
+      'menuReminderEvent': 'Reminder Event',
+      'menuPendingNotification': 'Pending Notification',
+      'menuChangePassword': 'Change Password',
+      'menuChangeFullnameOrUsername': 'Change Fullname Or Username',
+      'menuLoginHistory': 'Login History',
+      'menuExportDatabase': 'Export Database',
+      'menuImportDatabase': 'Import Database',
+      'menuLogout': 'Logout',
+      'other': '',
+    });
     return '$_temp0';
   }
 
@@ -470,4 +476,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get confirmNewPasswordHint => 'Input confirmation of new password';
+
+  @override
+  String get menuPendingNotification => 'Pending Notification';
 }

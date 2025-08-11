@@ -143,7 +143,7 @@
     },
 
     "dataStatusTitle": "Data Status",
-    "idleStatus" : "BELUM DIMULAI",
+    "idleStatus" : "MENGANGGUR",
     "progressStatus" : "PROGRESS",
     "doneStatus" : "SELESAI",
 
@@ -235,7 +235,7 @@
     },
     "to": "Sampai",
     
-    "menuSettingsLabel": "{menu, select, menuDataClass{Data Kelas} menuDataLecturer{Data Dosen} menuEventHistory{Riwayat Acara} menuReminderEvent{Pengingat Acara} menuReminderInput{Pengingat Masukkan Data} menuChangePassword{Ganti Kata Sandi} menuChangeFullnameOrUsername{Ganti Nama Lengkap Atau Nama Pengguna} menuLoginHistory{Riwayat Masuk} menuExportDatabase{Ekspor Database} menuImportDatabase{Impor Database} menuLogout{Keluar} other{}}",
+    "menuSettingsLabel": "{menu, select, menuDataClass{Data Kelas} menuDataLecturer{Data Dosen} menuEventHistory{Riwayat Acara} menuReminderEvent{Pengingat Acara} menuPendingNotification{Notifikasi Ditunda} menuChangePassword{Ganti Kata Sandi} menuChangeFullnameOrUsername{Ganti Nama Lengkap Atau Nama Pengguna} menuLoginHistory{Riwayat Masuk} menuExportDatabase{Ekspor Database} menuImportDatabase{Impor Database} menuLogout{Keluar} other{}}",
     "@menuSettingsLabel":{
         "description": "Translate Menu Settings",
         "placeholders": {
@@ -251,5 +251,6 @@
     "confirmNewPasswordLabel": "Konfirmasi Kata Sandi Baru",
     "oldPasswordHint": "Masukan kata sandi lama",
     "newPasswordHint": "Masukan kata sandi baru",
-    "confirmNewPasswordHint": "Masukkan konfirmasi kata sandi baru"
+    "confirmNewPasswordHint": "Masukkan konfirmasi kata sandi baru",
+    "menuPendingNotification" : "Notifikasi Ditunda"
 }

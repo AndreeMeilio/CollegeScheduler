@@ -6,7 +6,7 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
-    id("com.google.gms.google-services")
+    // id("com.google.gms.google-services")
 }
 
 val keystoreProperties = Properties()
@@ -21,6 +21,8 @@ android {
     ndkVersion = "27.0.12077973"
 
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
+
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -38,6 +40,8 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        multiDexEnabled = true
     }
 
     signingConfigs {
@@ -57,10 +61,14 @@ android {
     
     dependencies {
         implementation("com.google.android.material:material:1.13.0-alpha12")
-        implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
-        implementation("com.google.firebase:firebase-analytics")
-	    implementation("com.google.firebase:firebase-messaging")
-	    implementation("com.google.firebase:firebase-firestore")
+        // implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
+        // implementation("com.google.firebase:firebase-analytics")
+	    // implementation("com.google.firebase:firebase-messaging")
+	    // implementation("com.google.firebase:firebase-firestore")
+        coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+        implementation("androidx.window:window:1.0.0")
+        implementation("androidx.window:window-java:1.0.0")
+
     }
 }
 

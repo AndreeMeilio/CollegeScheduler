@@ -6,17 +6,25 @@ import 'package:college_scheduler/config/di_config.dart';
 import 'package:college_scheduler/config/generated/app_localizations.dart';
 import 'package:college_scheduler/config/generated/app_localizations_en.dart';
 import 'package:college_scheduler/config/generated/app_localizations_id.dart';
+import 'package:college_scheduler/config/notification_config.dart';
 import 'package:college_scheduler/config/route_navigator_config.dart';
 import 'package:college_scheduler/cubit/language_locale_cubit.dart';
 import 'package:college_scheduler/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:timezone/data/latest_all.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 // import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
+
+  tz.initializeTimeZones();
+  final jakarta = tz.getLocation('Asia/Jakarta');
+  tz.setLocalLocation(jakarta);
+
   runApp(const MyApp());
 }
 

@@ -10,12 +10,15 @@ import 'package:college_scheduler/pages/data_class_page.dart';
 import 'package:college_scheduler/pages/data_events_page.dart';
 import 'package:college_scheduler/pages/data_lecturer_page.dart';
 import 'package:college_scheduler/pages/detail_event_page.dart';
+import 'package:college_scheduler/pages/error_not_found_page.dart';
 import 'package:college_scheduler/pages/event_history_page.dart';
 import 'package:college_scheduler/pages/input_data_class_page.dart';
 import 'package:college_scheduler/pages/input_data_lecturer_page.dart';
 import 'package:college_scheduler/pages/login_history_page.dart';
 import 'package:college_scheduler/pages/login_page.dart';
+import 'package:college_scheduler/pages/pending_notification_page.dart';
 import 'package:college_scheduler/pages/register_page.dart';
+import 'package:college_scheduler/pages/reminder_event_page.dart';
 import 'package:college_scheduler/utils/custom_animation_page_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
@@ -153,6 +156,30 @@ class RouteNavigatorConfig {
           ),
         ]
       ),
-    ]
+      GoRoute(
+        path: ConstantsRouteValue.reminderEvent,
+        pageBuilder: (context, state){
+          return CustomAnimationPageUtils.animate(
+            key: state.pageKey,
+            child: ReminderEventPage()
+          );
+        }
+      ),
+      GoRoute(
+        path: ConstantsRouteValue.pendingNotification,
+        pageBuilder: (context, state) {
+          return CustomAnimationPageUtils.animate(
+            key: state.pageKey,
+            child: PendingNotificationPage()
+          );
+        }, 
+      )
+    ],
+    errorPageBuilder: (context, state) {
+      return CustomAnimationPageUtils.animate(
+        key: state.pageKey,
+        child: ErrorNotFoundPage()
+      );
+    },
   );
 }

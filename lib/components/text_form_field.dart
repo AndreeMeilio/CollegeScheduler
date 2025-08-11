@@ -80,6 +80,8 @@ class CustomTextFormField extends StatelessWidget {
           margin: _margin ?? const EdgeInsets.symmetric(horizontal: 24.0),
           child: TextFormField(
             decoration: InputDecoration(
+              contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
+              isCollapsed: true,
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
                 borderSide: BorderSide(color: ColorConfig.mainColor, width: 1.5)

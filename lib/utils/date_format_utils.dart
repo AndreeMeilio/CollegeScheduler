@@ -1,5 +1,6 @@
 
 import 'package:intl/intl.dart';
+import 'package:timezone/timezone.dart';
 
 class DateFormatUtils {
   static String dateFormatyMMdd({
@@ -11,10 +12,10 @@ class DateFormatUtils {
     return result;
   }
 
-  static String dateFormatyMMddhhiiss({
+  static String dateFormatyMMddkkiiss({
     required DateTime date
   }) {
-    final formatter = DateFormat('y-MM-dd hh:mm:ss');
+    final formatter = DateFormat('y-MM-dd kk:mm:ss');
     final result = formatter.format(date);
 
     return result;
@@ -29,10 +30,10 @@ class DateFormatUtils {
     return result;
   }
 
-  static String dateFormatddMMMMyhhiiss({
+  static String dateFormatddMMMMykkiiss({
     required DateTime date
   }) {
-    final formatter = DateFormat('dd MMMM y hh:mm:ss');
+    final formatter = DateFormat('dd MMMM y kk:mm:ss');
     final result = formatter.format(date);
 
     return result;
@@ -45,5 +46,9 @@ class DateFormatUtils {
     final result = formatter.format(date);
 
     return result;
+  }
+
+  static Location getLocationTimeZone(){
+      return getLocation("Asia/Jakarta");
   }
 }

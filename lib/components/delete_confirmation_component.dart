@@ -4,15 +4,23 @@ import 'package:college_scheduler/config/color_config.dart';
 import 'package:college_scheduler/config/text_style_config.dart';
 import 'package:flutter/material.dart';
 
-class DeleteConfirmationComponent extends StatelessWidget {
-  const DeleteConfirmationComponent({
+class BottomSheetConfirmationWidget extends StatelessWidget {
+  const BottomSheetConfirmationWidget({
     super.key,
     required this.onCancel,
-    required this.onProcceed
+    required this.onProcceed,
+    this.title,
+    this.description,
+    this.leftButtonLabel,
+    this.rightButtonLabel
   });
 
   final dynamic Function()? onCancel;
   final dynamic Function()? onProcceed;
+  final String? title;
+  final String? description;
+  final String? leftButtonLabel;
+  final String? rightButtonLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +33,14 @@ class DeleteConfirmationComponent extends StatelessWidget {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
             child: Text(
-              "Delete Confirmation!",
+              title ?? "",
               style: TextStyleConfig.body1bold,
             ),
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Text(
-              "The deleted data cannot be restored, Are you sure you want to delete it?",
+              description ?? "",
               style: TextStyleConfig.body1,
               textAlign: TextAlign.center,
             ),
@@ -43,14 +51,14 @@ class DeleteConfirmationComponent extends StatelessWidget {
             children: [
               Expanded(
                 child: PrimaryButtonComponent(
-                  label: "Cancel",
+                  label: leftButtonLabel ?? "",
                   color: ColorConfig.greyColor,
                   onTap: onCancel
                 ),
               ),
               Expanded(
                 child: PrimaryButtonComponent(
-                  label: "Yes, Delete It",
+                  label: rightButtonLabel ?? "",
                   color: ColorConfig.mainColor,
                   onTap: onProcceed
                 ),

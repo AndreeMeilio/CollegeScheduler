@@ -13,12 +13,6 @@ class DatabaseVersionScheme {
       case 1:
         await databaseVersion_1();
         break;
-      case 2:
-        await databaseVersion_2();
-        break;
-      case 3:
-        await databaseVersion_3();
-        break;
     }
   }
 
@@ -95,9 +89,7 @@ class DatabaseVersionScheme {
         )
       """
     );
-  }
 
-  Future<void> databaseVersion_2() async{
     await _db.execute(
       """
         create table menu(
@@ -113,12 +105,27 @@ class DatabaseVersionScheme {
       """
     );
 
+    await _db.execute(
+      """
+        create table notification_settings(
+          id integer primary key autoincrement,
+          is_notification_on integer,
+          number_before_type integer,
+          type_notification text,
+          type_hour text,
+          user_id integer,
+          create_at text,
+          updated_at text
+        )
+      """
+    );
+
     await _db.transaction((trx) async{
       Batch batch = trx.batch();
 
       // MENU DATA  
       batch.insert("menu", {
-        "name": "Data Class",
+        "name": "menuDataClass",
         "route": "/class",
         "isIncoming": 0,
         "show_order": 1,
@@ -127,7 +134,7 @@ class DatabaseVersionScheme {
         "updated_at": DateTime.now().toString()
       });
       batch.insert("menu", {
-        "name": "Data lecturer",
+        "name": "menuDataLecturer",
         "route": "/lecturer",
         "isIncoming": 0,
         "show_order": 2,
@@ -136,7 +143,7 @@ class DatabaseVersionScheme {
         "updated_at": DateTime.now().toString()
       });
       batch.insert("menu", {
-        "name": "Event History",
+        "name": "menuEventHistory",
         "route": "/events/history",
         "isIncoming": 0,
         "show_order": 3,
@@ -147,18 +154,18 @@ class DatabaseVersionScheme {
 
       //MENU NOTIFICATION
       batch.insert("menu", {
-        "name": "Reminder Event",
-        "route": "-",
-        "isIncoming": 1,
+        "name": "menuReminderEvent",
+        "route": "/reminder-event",
+        "isIncoming": 0,
         "show_order": 101,
         "parent_menu": "notification",
         "created_at": DateTime.now().toString(),
         "updated_at": DateTime.now().toString()
       });
       batch.insert("menu", {
-        "name": "Reminder Input",
-        "route": "-",
-        "isIncoming": 1,
+        "name": "menuPendingNotification",
+        "route": "/pending-notification",
+        "isIncoming": 0,
         "show_order": 102,
         "parent_menu": "notification",
         "created_at": DateTime.now().toString(),
@@ -168,7 +175,7 @@ class DatabaseVersionScheme {
 
       //MENU ACCOUNT
       batch.insert("menu", {
-        "name": "Change Password",
+        "name": "menuChangePassword",
         "route": "/change-password",
         "isIncoming": 0,
         "show_order": 201,
@@ -177,7 +184,7 @@ class DatabaseVersionScheme {
         "updated_at": DateTime.now().toString()
       });
       batch.insert("menu", {
-        "name": "Change Fullname Or Username",
+        "name": "menuChangeFullnameOrUsername",
         "route": "/change-fullname-or-username",
         "isIncoming": 0,
         "show_order": 202,
@@ -186,7 +193,7 @@ class DatabaseVersionScheme {
         "updated_at": DateTime.now().toString()
       });
       batch.insert("menu", {
-        "name": "Login History",
+        "name": "menuLoginHistory",
         "route": "/login/history",
         "isIncoming": 0,
         "show_order": 203,
@@ -195,7 +202,7 @@ class DatabaseVersionScheme {
         "updated_at": DateTime.now().toString()
       });
       batch.insert("menu", {
-        "name": "Export Database",
+        "name": "menuExportDatabase",
         "route": "/export-db",
         "isIncoming": 1,
         "show_order": 204,
@@ -213,7 +220,7 @@ class DatabaseVersionScheme {
         "updated_at": DateTime.now().toString()
       });
       batch.insert("menu", {
-        "name": "Logout",
+        "name": "menuLogout",
         "route": "/logout",
         "isIncoming": 0,
         "show_order": 299,
@@ -221,101 +228,6 @@ class DatabaseVersionScheme {
         "created_at": DateTime.now().toString(),
         "updated_at": DateTime.now().toString()
       });
-
-      await batch.commit();
-    });
-  }
-
-  Future<void> databaseVersion_3() async{
-    await _db.transaction((trx) async{
-      Batch batch = trx.batch();
-
-      // MENU DATA  
-      batch.update("menu", {
-        "name": "menuDataClass",
-        "route": "/class",
-        "isIncoming": 0,
-        "show_order": 1,
-        "parent_menu": "data",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Data Class"]);
-      batch.update("menu", {
-        "name": "menuDataLecturer",
-        "route": "/lecturer",
-        "isIncoming": 0,
-        "show_order": 2,
-        "parent_menu": "data",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Data lecturer"]);
-      batch.update("menu", {
-        "name": "menuEventHistory",
-        "route": "/events/history",
-        "isIncoming": 0,
-        "show_order": 3,
-        "parent_menu": "data",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Event History"]);
-
-      //MENU NOTIFICATION
-      batch.update("menu", {
-        "name": "menuReminderEvent",
-        "route": "-",
-        "isIncoming": 1,
-        "show_order": 101,
-        "parent_menu": "notification",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Reminder Event"]);
-      batch.update("menu", {
-        "name": "menuReminderInput",
-        "route": "-",
-        "isIncoming": 1,
-        "show_order": 102,
-        "parent_menu": "notification",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Reminder Input"]);
-
-
-      //MENU ACCOUNT
-      batch.update("menu", {
-        "name": "menuChangePassword",
-        "route": "/change-password",
-        "isIncoming": 0,
-        "show_order": 201,
-        "parent_menu": "account",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Change Password"]);
-      batch.update("menu", {
-        "name": "menuChangeFullnameOrUsername",
-        "route": "/change-fullname-or-username",
-        "isIncoming": 0,
-        "show_order": 202,
-        "parent_menu": "account",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Change Fullname Or Username"]);
-      batch.update("menu", {
-        "name": "menuLoginHistory",
-        "route": "/login/history",
-        "isIncoming": 0,
-        "show_order": 203,
-        "parent_menu": "account",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Login History"]);
-      batch.update("menu", {
-        "name": "menuExportDatabase",
-        "route": "/export-db",
-        "isIncoming": 1,
-        "show_order": 204,
-        "parent_menu": "account",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Export Database"]);
-      batch.update("menu", {
-        "name": "menuLogout",
-        "route": "/logout",
-        "isIncoming": 0,
-        "show_order": 299,
-        "parent_menu": "account",
-        "updated_at": DateTime.now().toString()
-      }, where: "name = ?", whereArgs: ["Logout"]);
 
       await batch.commit();
     });
